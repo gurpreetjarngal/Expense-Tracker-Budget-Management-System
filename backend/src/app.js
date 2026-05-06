@@ -9,15 +9,32 @@ import reportRoutes from './routes/reportRoutes.js';
 import transactionRoutes from './routes/transactionRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import { errorHandler, notFound } from './middleware/errorMiddleware.js';
+import dns from 'node:dns';
 
 const app = express();
+
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
+
+
+const apiRoutes = [
+  '/api/health',
+  '/api/auth',
+  '/api/users',
+  '/api/transactions',
+  '/api/budgets',
+  '/api/reports'
+];
 
 app.use(helmet());
 app.use(
   cors({
     origin: (origin, callback) => {
-      const defaultOrigins = ['http://127.0.0.1:5173', 'http://localhost:5173', 'http://127.0.0.1:5174',
-            'http://localhost:5174'];
+      const defaultOrigins = [
+        'http://127.0.0.1:5173',
+        'http://localhost:5173',
+        'http://127.0.0.1:5174',
+        'http://localhost:5174'
+      ];
       const envOrigins = (process.env.CLIENT_URL || '')
         .split(',')
         .map((o) => o.trim())
@@ -41,6 +58,15 @@ app.use(rateLimit({ windowMs: 15 * 60 * 1000, limit: 300 }));
 if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'));
 }
+
+app.get('/', (req, res) => {
+  res.json({
+    name: 'Expense Tracker API',
+    status: 'ok',
+    health: '/api/health',
+    routes: apiRoutes
+  });
+});
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }));
 app.use('/api/auth', authRoutes);

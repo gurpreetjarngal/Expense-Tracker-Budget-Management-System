@@ -1,7 +1,15 @@
 import axios from 'axios';
 
+const apiBaseUrl = import.meta.env.VITE_API_URL || '/api';
+
+if (import.meta.env.PROD && apiBaseUrl === '/api') {
+  console.warn(
+    'VITE_API_URL is /api in production. This only works when the frontend and backend are deployed on the same domain. Set VITE_API_URL to your deployed backend URL, for example: https://your-api.onrender.com/api'
+  );
+}
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api'
+  baseURL: apiBaseUrl
 });
 
 let onUnauthorized = null;

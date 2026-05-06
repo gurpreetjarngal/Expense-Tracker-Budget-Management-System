@@ -107,7 +107,9 @@ Authorization: Bearer {{token}}
 ## Deployment
 
 - Backend: deploy to Render, Railway, Fly.io, or a Node-capable VPS. Set `MONGO_URI`, `JWT_SECRET`, `CLIENT_URL`, and `NODE_ENV=production`.
-- Frontend: deploy `frontend/dist` to Vercel, Netlify, or static hosting. Set `VITE_API_URL` to your deployed API URL.
+- Backend health check: open `https://your-backend-domain.com/api/health`. Opening the backend root also returns API info.
+- Frontend: deploy `frontend/dist` to Vercel, Netlify, or static hosting. Set `VITE_API_URL` to your deployed API URL including `/api`, for example `https://your-backend-domain.com/api`.
+- If the frontend and backend are deployed on different domains, set backend `CLIENT_URL` to the deployed frontend origin, for example `https://your-frontend-domain.com`.
 - MongoDB: use MongoDB Atlas in production.
 - Security: use HTTPS, a strong JWT secret, production CORS origin, and avoid committing `.env` files.
 
