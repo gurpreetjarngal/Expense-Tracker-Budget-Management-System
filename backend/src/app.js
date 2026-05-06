@@ -40,9 +40,8 @@ app.use(
         .map((o) => o.trim())
         .filter(Boolean);
 
-      const allowedOrigins = envOrigins.length ? envOrigins : defaultOrigins;
+      const allowedOrigins = [...new Set([...defaultOrigins, ...envOrigins])];
 
-      // Allow non-browser clients (curl/Postman) that don't send an Origin header.
       if (!origin) return callback(null, true);
 
       if (allowedOrigins.includes(origin)) return callback(null, true);
