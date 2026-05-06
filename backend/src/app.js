@@ -8,12 +8,10 @@ import budgetRoutes from './routes/budgetRoutes.js';
 import reportRoutes from './routes/reportRoutes.js';
 import transactionRoutes from './routes/transactionRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import { connectDB } from './config/db.js';
 import { errorHandler, notFound } from './middleware/errorMiddleware.js';
-import dns from 'node:dns';
 
 const app = express();
-
-dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 
 const apiRoutes = [
@@ -68,6 +66,16 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }));
+
+app.use('/api', async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/transactions', transactionRoutes);
