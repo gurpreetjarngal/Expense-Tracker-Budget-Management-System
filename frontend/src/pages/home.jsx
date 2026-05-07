@@ -54,7 +54,7 @@ const Home = () => {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[400px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-24 py-14 sm:py-20 lg:py-28 w-full mx-auto px-4 sm:px-6 lg:px-10 text-center lg:text-left overflow-hidden">
-            <div className="my-6 lg:my-10 max-w-lg w-full">
+            <div className="my-6 lg:my-10 ml-20 max-w-lg w-full">
               <span className="inline-block text-[10px] sm:text-xs font-semibold tracking-widest text-emerald-400 bg-emerald-400/10 border border-emerald-800 px-3 py-1 rounded-full mb-6">
                 🚀 SMART FINANCIAL MANAGEMENT
               </span>
