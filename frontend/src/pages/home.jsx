@@ -21,11 +21,11 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="w-full max-w-full overflow-x-hidden">
       {/* HEADER */}
       <header className="bg-[#0A0F1E] text-white shadow-lg min-h-16 flex items-center justify-center border-b border-emerald-900/50 sticky top-0 z-50 backdrop-blur-sm">
-        <nav className="flex justify-between items-center w-full max-w-7xl px-4 sm:px-6 lg:px-10">
-          <h1 className="text-lg sm:text-xl text-emerald-400 font-bold tracking-tight">
+        <nav className="flex justify-between items-center w-full max-w-7xl px-3 sm:px-6 lg:px-10">
+          <h1 className="text-base sm:text-xl text-emerald-400 font-bold tracking-tight whitespace-nowrap">
             Expense<span className="text-white">Flow</span>
           </h1>
 
@@ -53,24 +53,27 @@ const Home = () => {
         <div className="bg-[#0A0F1E] relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[400px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-24 py-16 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center lg:text-left">
-            <div className="my-10 max-w-lg">
-              <span className="inline-block text-xs font-semibold tracking-widest text-emerald-400 bg-emerald-400/10 border border-emerald-800 px-3 py-1 rounded-full mb-6">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-24 py-14 sm:py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center lg:text-left overflow-hidden">
+            <div className="my-6 lg:my-10 max-w-lg w-full">
+              <span className="inline-block text-[10px] sm:text-xs font-semibold tracking-widest text-emerald-400 bg-emerald-400/10 border border-emerald-800 px-3 py-1 rounded-full mb-6">
                 🚀 SMART FINANCIAL MANAGEMENT
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F1F5F9] leading-tight">
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F1F5F9] leading-tight break-words">
                 Take Control of Your
                 <br />
                 <span className="text-3xl sm:text-4xl text-emerald-400">
                   Finances with Clarity
                 </span>
               </h2>
-              <p className="mt-4 text-[#94A3B8] leading-relaxed">
+
+              <p className="mt-4 text-[#94A3B8] leading-relaxed text-sm sm:text-base">
                 Track your expenses, set smart budgets and gain powerful
                 insights to build better financial habits effortlessly and
                 securely.
               </p>
-              <div className="flex flex-col sm:flex-row items-center gap-3 mt-6">
+
+              <div className="flex flex-col sm:flex-row items-center gap-3 mt-6 w-full">
                 <input
                   type="text"
                   placeholder="Enter your email"
@@ -84,16 +87,17 @@ const Home = () => {
                   Get Started
                 </button>
               </div>
+
               <span className="inline-block mt-4 text-xs rounded-full bg-[#1E293B] text-[#64748B] px-4 py-1.5 border border-[#334155]">
                 No credit card required • 100% secure
               </span>
             </div>
 
-            <div className="flex-shrink-0 w-full flex justify-center">
-              <div className="relative">
+            <div className="w-full flex justify-center overflow-hidden px-2">
+              <div className="relative w-full max-w-[300px] sm:max-w-[420px]">
                 <div className="absolute inset-0 bg-emerald-500/10 rounded-2xl blur-xl scale-105" />
                 <img
-                  className="w-full max-w-[320px] sm:max-w-[420px] h-auto rounded-2xl border border-emerald-900/60 shadow-2xl shadow-emerald-900/30 relative z-10"
+                  className="w-full h-auto rounded-2xl border border-emerald-900/60 shadow-2xl shadow-emerald-900/30 relative z-10"
                   src="https://i.ibb.co/99kKCtjQ/Gemini-Generated-Image-ckq49ickq49ickq4.png"
                   alt="image is running"
                 />
@@ -104,7 +108,7 @@ const Home = () => {
       </main>
 
       {/* TRUSTED SECTION */}
-      <div className="bg-[#060D1A] py-8 border-t border-b border-emerald-950">
+      <div className="bg-[#060D1A] py-8 border-t border-b border-emerald-950 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
           <p className="text-center text-xs font-semibold tracking-widest text-[#ffffff] mb-5">
             TRUSTED BY INDIAN LEADERS
@@ -130,13 +134,13 @@ const Home = () => {
       </div>
 
       {/* PROCESS SECTION */}
-      <div className="bg-[#0A0F1E] py-16 lg:py-24">
+      <div className="bg-[#0A0F1E] py-16 lg:py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
           <div className="text-center mb-14">
             <h2 className="font-bold text-2xl sm:text-3xl text-[#F1F5F9] mb-4">
               Empower Your Financial Strategy
             </h2>
-            <p className="text-[#64748B] max-w-xl mx-auto leading-relaxed">
+            <p className="text-[#64748B] max-w-xl mx-auto leading-relaxed text-sm sm:text-base">
               Stay ahead of your finances with automated tools and real-time
               insights tailored for modern expense management
             </p>
@@ -193,7 +197,7 @@ const Home = () => {
       </div>
 
       {/* RATING SECTION */}
-      <section className="bg-[#060D1A] py-16 lg:py-20 border-y-2">
+      <section className="bg-[#060D1A] py-16 lg:py-20 border-y-2 overflow-hidden">
         <h2 className="text-center text-2xl sm:text-3xl font-bold text-white mb-12 px-4">
           How ExpenseFlow Works
         </h2>
@@ -255,13 +259,13 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="flex flex-col md:flex-row gap-1 md:gap-4 min-h-14 bg-[#060D1A] justify-center items-center text-xs sm:text-sm text-[#ffffff] px-4 text-center">
+      <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 min-h-14 bg-[#060D1A] justify-center items-center text-xs sm:text-sm text-[#ffffff] px-4 text-center">
         <p>© 2026 ExpenseTracker. All rights reserved.</p>
         <p>Built for better financial control</p>
       </div>
 
-      <section className="relative h-[160px] sm:h-[220px] lg:h-[260px] overflow-hidden bg-[#060D1A]">
-        <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap text-[18vw] sm:text-[15vw] font-black leading-none tracking-[-0.08em] text-emerald-400">
+      <section className="relative h-[120px] sm:h-[220px] lg:h-[260px] overflow-hidden bg-[#060D1A] w-full">
+        <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap text-[15vw] font-black leading-none tracking-[-0.08em] text-emerald-400">
           ExpenseFlow
         </h2>
       </section>
