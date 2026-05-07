@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -21,7 +20,7 @@ const Home = () => {
   };
 
   return (
-    <div className="w-screen max-w-full overflow-x-hidden bg-[#0A0F1E]">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#0A0F1E]">
       {/* HEADER */}
       <header className="bg-[#0A0F1E] text-white shadow-lg min-h-16 flex items-center justify-center border-b border-emerald-900/50 sticky top-0 z-50 backdrop-blur-sm">
         <nav className="flex justify-between items-center w-full max-w-7xl px-3 sm:px-6 lg:px-10">
@@ -53,16 +52,16 @@ const Home = () => {
         <div className="bg-[#0A0F1E] relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[400px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-24 py-14 sm:py-20 lg:py-28 w-full mx-auto px-4 sm:px-6 lg:px-10 text-center lg:text-left overflow-hidden">
-            <div className="my-6 lg:my-10 ml-20 max-w-lg w-full">
+          <div className="flex w-full max-w-7xl flex-col items-center justify-center gap-10 overflow-hidden px-4 py-14 text-center sm:px-6 sm:py-20 lg:mx-auto lg:flex-row lg:gap-20 lg:px-10 lg:py-28 lg:text-left xl:gap-24">
+            <div className="my-6 w-full max-w-lg lg:my-10">
               <span className="inline-block text-[10px] sm:text-xs font-semibold tracking-widest text-emerald-400 bg-emerald-400/10 border border-emerald-800 px-3 py-1 rounded-full mb-6">
                 🚀 SMART FINANCIAL MANAGEMENT
               </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F1F5F9] leading-tight break-words">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F1F5F9] leading-tight">
                 Take Control of Your
                 <br />
-                <span className="text-3xl sm:text-4xl text-emerald-400">
+                <span className="text-3xl sm:text-4xl lg:text-5xl text-emerald-400">
                   Finances with Clarity
                 </span>
               </h2>
@@ -93,8 +92,8 @@ const Home = () => {
               </span>
             </div>
 
-            <div className="w-full flex justify-center overflow-hidden px-2">
-              <div className="relative w-full max-w-[300px] sm:max-w-[420px]">
+            <div className="flex w-full justify-center overflow-hidden px-2 lg:w-auto lg:flex-1">
+              <div className="relative w-full max-w-[300px] sm:max-w-[420px] lg:max-w-[460px]">
                 <div className="absolute inset-0 bg-emerald-500/10 rounded-2xl blur-xl scale-105" />
                 <img
                   className="w-full h-auto rounded-2xl border border-emerald-900/60 shadow-2xl shadow-emerald-900/30 relative z-10"
@@ -265,7 +264,7 @@ const Home = () => {
       </div>
 
       <section className="relative h-[120px] sm:h-[220px] lg:h-[260px] overflow-hidden bg-[#060D1A] w-full">
-        <h2 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none whitespace-nowrap text-[15vw] font-black leading-none tracking-[-0.08em] text-emerald-400">
+        <h2 className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 select-none text-center text-[clamp(2.75rem,14vw,10rem)] font-black leading-none text-emerald-400">
           ExpenseFlow
         </h2>
       </section>
