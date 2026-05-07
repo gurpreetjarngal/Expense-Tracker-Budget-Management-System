@@ -13,12 +13,22 @@
   color-scheme: dark;
 }
 
+/* RESPONSIVE FIX */
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
   background: #f5f8fb;
   color: #10212f;
+  overflow-x: hidden;
 }
 
 .dark body {
@@ -28,6 +38,15 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 @layer components {
